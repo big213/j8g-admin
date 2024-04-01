@@ -1,0 +1,28 @@
+name: Backend Deploy
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: "Log level"
+        required: true
+        default: "warning"
+      tags:
+        description: "Test scenario tags"
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Build Cloud Functions
+        run: cd backend/functions && npm ci
+      - name: "Create env file"
+        run: echo "${{ secrets.BACKEND_ENV }}" > backend/functions/.env
+      - name: "Update env file"
+        run: echo -e "BASE_VERSION=${{ github.sha }}" >> backend/functions/.env
+      - name: Create SA key
+        run: echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}' > $HOME/gcloud.json
+      - name: Deploy Cloud Functions
+        run: export GOOGLE_APPLICATION_CREDENTIALS=$HOME/gcloud.json && cd backend/functions && npx firebase-tools deploy --only functions:api --json

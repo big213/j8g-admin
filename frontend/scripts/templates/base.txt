@@ -1,0 +1,43 @@
+import type { RecordInfo } from '~/types'
+import { generateBaseFields, generateSortOptions } from '~/services/recordInfo'
+import { Simple{{ capitalizedTypename }} } from '../simple'
+
+export const {{ capitalizedTypename }} = <RecordInfo<'{{ typename }}'>>{
+  ...Simple{{ capitalizedTypename }},
+  routeType: 'a',
+  fields: {
+    ...generateBaseFields(Simple{{ capitalizedTypename }}),
+  },
+  paginationOptions: {
+    searchOptions: undefined,
+    filterOptions: [],
+    heroOptions: {},
+    sortOptions: [
+      ...generateSortOptions("updatedAt"),
+    ],
+    headerOptions: [
+      {
+        field: 'nameWithAvatar',
+        hideIfGrid: true,
+      },
+      {
+        field: 'updatedAt',
+        width: '150px',
+      },
+    ],
+  },
+  addOptions: {
+    fields: ['avatarUrl', 'name', 'description'],
+  },
+  editOptions: {
+    fields: ['avatarUrl', 'name', 'description'],
+  },
+  viewOptions: {
+    fields: ['avatarUrl', 'name', 'description'],
+    heroOptions: {},
+  },
+  enterOptions: {},
+  deleteOptions: {},
+  shareOptions: {},
+  expandTypes: [],
+}
