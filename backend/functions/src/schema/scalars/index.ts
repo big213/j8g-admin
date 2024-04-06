@@ -19,6 +19,7 @@ export { id } from "./id";
 export { regex } from "./regex";
 export { json } from "./json";
 export { jsonString } from "./jsonString";
+export { handle } from "./handle";
 
 // generate the scalar types
 export const userRole = enums.userRole.generateScalarType();

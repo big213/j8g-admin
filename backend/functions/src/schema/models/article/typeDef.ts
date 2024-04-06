@@ -39,6 +39,11 @@ export default new GiraffeqlObjectType(
         isArray: true,
         allowNull: false,
       }),
+      handle: generateStringField({
+        allowNull: false,
+        type: Scalars.handle,
+        sqlOptions: { unique: true },
+      }),
       ...generateTimestampFields(),
       ...generateCreatedByField(User),
     },

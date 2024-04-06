@@ -21,8 +21,8 @@ export const NavigationItem = <RecordInfo<'navigationItem'>>{
         },
       },
     }),
-    url: {
-      text: 'URL',
+    path: {
+      text: 'Path',
     },
     text: {
       text: 'Text',
@@ -51,13 +51,13 @@ export const NavigationItem = <RecordInfo<'navigationItem'>>{
     ],
   },
   addOptions: {
-    fields: ['sortIndex', 'text', 'article', 'url'],
+    fields: ['sortIndex', 'text', 'article', 'path'],
   },
   editOptions: {
-    fields: ['sortIndex', 'text', 'article', 'url'],
+    fields: ['sortIndex', 'text', 'article', 'path'],
   },
   viewOptions: {
-    fields: ['sortIndex', 'text', 'articleRecord', 'url'],
+    fields: ['sortIndex', 'text', 'articleRecord', 'path'],
     heroOptions: {},
   },
   enterOptions: {},

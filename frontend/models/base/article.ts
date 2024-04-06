@@ -55,6 +55,9 @@ export const Article = <RecordInfo<'article'>>{
           }),
       },
     }),
+    handle: {
+      text: 'Handle',
+    },
     'articleTagLink/tag.id': {
       getOptions: (that) =>
         getTags(that, false, {
@@ -99,13 +102,13 @@ export const Article = <RecordInfo<'article'>>{
     ],
   },
   addOptions: {
-    fields: ['imageUrl', 'title', 'content', 'files', 'tags'],
+    fields: ['imageUrl', 'title', 'content', 'files', 'tags', 'handle'],
   },
   editOptions: {
-    fields: ['imageUrl', 'title', 'content', 'files', 'tags'],
+    fields: ['imageUrl', 'title', 'content', 'files', 'tags', 'handle'],
   },
   viewOptions: {
-    fields: ['imageUrl', 'title', 'content', 'files', 'tags'],
+    fields: ['imageUrl', 'title', 'content', 'files', 'tags', 'handle'],
     heroOptions: {},
   },
   enterOptions: {},

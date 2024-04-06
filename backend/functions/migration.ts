@@ -45,6 +45,7 @@ export async function up(knex: Knex): Promise<void[]> {
       table.text("content").nullable();
       table.jsonb("files").notNullable().defaultTo([]);
       table.jsonb("tags").notNullable().defaultTo([]);
+      table.string("handle").notNullable().unique();
       table.dateTime("created_at").notNullable().defaultTo(knex.fn.now());
       table.dateTime("updated_at").notNullable().defaultTo(knex.fn.now());
       table.string("created_by").notNullable();
@@ -61,7 +62,7 @@ export async function up(knex: Knex): Promise<void[]> {
     knex.schema.createTable("navigationItem", function (table) {
       table.string("id").notNullable().primary();
       table.string("article").nullable();
-      table.string("url").nullable();
+      table.string("path").nullable();
       table.string("text").notNullable();
       table.integer("sort_index").nullable();
       table.dateTime("created_at").notNullable().defaultTo(knex.fn.now());

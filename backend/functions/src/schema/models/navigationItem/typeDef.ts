@@ -23,9 +23,9 @@ export default new GiraffeqlObjectType(
         allowNull: true,
         service: Article,
       }),
-      url: generateStringField({
+      path: generateStringField({
         allowNull: true,
-        type: Scalars.url,
+        type: Scalars.string,
       }),
       text: generateStringField({
         allowNull: false,
