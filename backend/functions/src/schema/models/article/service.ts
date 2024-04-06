@@ -12,6 +12,7 @@ import {
 } from "../../core/helpers/resolver";
 import { knex } from "../../../utils/knex";
 import { ArticleTagLink } from "../../services";
+import { KeyMap } from "../../core/services/paginated";
 
 export class ArticleService extends PaginatedService {
   defaultTypename = "article";
@@ -27,6 +28,11 @@ export class ArticleService extends PaginatedService {
     id: {},
     "createdBy.id": {},
     "articleTagLink/tag.id": {},
+  };
+
+  uniqueKeyMap: KeyMap = {
+    primary: ["id"],
+    handle: ["handle"]
   };
 
   sortFieldsMap = {
