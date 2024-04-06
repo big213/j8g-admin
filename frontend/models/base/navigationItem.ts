@@ -15,6 +15,11 @@ export const NavigationItem = <RecordInfo<'navigationItem'>>{
       text: 'Article',
       fieldname: 'article',
       typename: 'article',
+      fieldOptions: {
+        inputOptions: {
+          textField: 'title',
+        },
+      },
     }),
     url: {
       text: 'URL',

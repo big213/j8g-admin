@@ -351,11 +351,13 @@ export function handleError(that, err) {
     // error thrown by server
     if (err.response && err.response.data.error.message) {
       that.$notifier.showSnackbar({
-        message: `${
-          err.response.data.error.message
-        } at [${err.response.data.error.fieldPath
-          .filter((ele) => ele !== '__args')
-          .join('-')}]`,
+        message: `${err.response.data.error.message}${
+          err.response.data.error.fieldPath
+            ? ` at [${err.response.data.error.fieldPath
+                .filter((ele) => ele !== '__args')
+                .join('-')}]`
+            : ''
+        }`,
         variant: 'error',
         copyableMessage: JSON.stringify(
           {
@@ -1112,7 +1114,7 @@ export function loadTypeSearchResults(that, inputObject) {
       edges: {
         node: {
           id: true,
-          name: true,
+          [inputObject.inputOptions?.textField ?? 'name']: true,
           ...(inputObject.inputOptions?.hasAvatar && {
             avatarUrl: true,
           }),

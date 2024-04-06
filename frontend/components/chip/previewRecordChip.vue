@@ -4,7 +4,7 @@
       <v-img v-if="avatarUrl" :src="avatarUrl" contain></v-img
       ><v-icon v-else>{{ fallbackIcon }} </v-icon>
     </v-avatar>
-    <i v-if="value.name === undefined">{{ value.id }}</i>
+    <i v-if="name === undefined">{{ value.id }}</i>
     <span v-else-if="name">
       {{ name }}
     </span>

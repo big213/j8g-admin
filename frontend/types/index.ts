@@ -69,6 +69,7 @@ export type RecordInfo<T extends keyof MainTypes> = {
   hasDescription?: boolean
   hasOrganizationOwner?: boolean
   hasUserOwner?: boolean
+  textField?: string // the field that corresponds to the text, if not "name"
 
   // how to render the item as a string. by default, it is usually rendered as name || id
   renderItem?: (item) => string
@@ -534,6 +535,9 @@ type InputOptions = {
     // the fallback icon for the avatar
     fallbackIcon?: string
   }
+
+  // for searchable fields, the "name" field, if it is not name
+  textField?: string
 
   // only applies to value-array
   nestedFields?: {

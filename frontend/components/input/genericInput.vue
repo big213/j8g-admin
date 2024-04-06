@@ -343,7 +343,7 @@
       v-model="item.value"
       :search-input.sync="item.inputValue"
       :items="item.options"
-      item-text="name"
+      :item-text="itemText"
       item-value="id"
       :label="item.label + (item.optional ? ' (optional)' : '')"
       :readonly="isReadonly"
@@ -417,7 +417,7 @@
       v-model="item.value"
       :search-input.sync="item.inputValue"
       :items="item.options"
-      item-text="name"
+      :item-text="itemText"
       item-value="id"
       :label="item.label + (item.optional ? ' (optional)' : '')"
       :readonly="isReadonly"
@@ -497,7 +497,7 @@
       v-model="item.value"
       :items="item.options"
       :multiple="item.inputType === 'autocomplete-multiple'"
-      item-text="name"
+      :item-text="itemText"
       item-value="id"
       :label="item.label + (item.optional ? ' (optional)' : '')"
       :readonly="isReadonly"
@@ -572,7 +572,7 @@
       v-model="item.value"
       :search-input.sync="item.inputValue"
       :items="item.options"
-      item-text="name"
+      :item-text="itemText"
       item-value="id"
       :label="item.label + (item.optional ? ' (optional)' : '')"
       :readonly="isReadonly"
@@ -712,7 +712,7 @@
       :loading="item.loading"
       persistent-hint
       return-object
-      item-text="name"
+      :item-text="itemText"
       item-value="id"
       class="py-0"
       :chips="item.inputOptions && item.inputOptions.hasAvatar"
@@ -1095,6 +1095,10 @@ export default {
         : this.item.clearable
         ? 'mdi-close'
         : null
+    },
+
+    itemText() {
+      return this.item.inputOptions?.textField ?? 'name'
     },
   },
 

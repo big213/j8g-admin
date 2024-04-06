@@ -9,4 +9,8 @@ export const SimpleArticle = <SimpleRecordInfo<'article'>>{
   hasName: false,
   hasAvatar: false,
   hasDescription: false,
+  textField: 'title',
+  chipOptions: {
+    getName: (item) => item.title,
+  },
 }

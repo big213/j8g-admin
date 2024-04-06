@@ -73,6 +73,9 @@ export function generatePreviewableRecordField({
     text,
     fields: [
       simpleModel.hasName ? `${fieldnamePrefix}name` : null,
+      simpleModel.textField
+        ? `${fieldnamePrefix}${simpleModel.textField}`
+        : null,
       `${fieldnamePrefix}id`,
       `${fieldnamePrefix}__typename`,
       simpleModel.hasAvatar ? `${fieldnamePrefix}avatarUrl` : null,
