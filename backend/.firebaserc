@@ -1,15 +1,15 @@
 {
   "projects": {
-    "default": "giraffeql-boilerplate"
+    "default": "j8g-admin"
   },
   "targets": {
-    "giraffeql-boilerplate": {
+    "j8g-admin": {
       "hosting": {
         "api": [
-          "giraffeql-boilerplate-api"
+          "j8g-admin-api"
         ],
         "cdn": [
-          "giraffeql-boilerplate-cdn"
+          "j8g-admin-cdn"
         ]
       }
     }

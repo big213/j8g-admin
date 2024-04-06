@@ -12,12 +12,12 @@ export const tempStoragePath = process.env.tempStoragePath
 export const isDev = process.env.isDev
 
 export const firebaseConfig = {
-  apiKey: 'AIzaSyDMuwUROWZQyG93I21ofU7Cx52q42_XZ0Q',
-  authDomain: 'giraffeql-boilerplate.firebaseapp.com',
-  projectId: 'giraffeql-boilerplate',
-  storageBucket: 'giraffeql-boilerplate.appspot.com',
-  messagingSenderId: '229325360702',
-  appId: '1:229325360702:web:30786fc003bc2972970b6f',
+  apiKey: 'AIzaSyBK-rvJXdCeOQ4pnfA9wikUTwO0Ifw20eU',
+  authDomain: 'j8g-admin.firebaseapp.com',
+  projectId: 'j8g-admin',
+  storageBucket: 'j8g-admin.appspot.com',
+  messagingSenderId: '287340072520',
+  appId: '1:287340072520:web:cb92e8149c77ebed82527d',
 }
 
 export const routesMap = {

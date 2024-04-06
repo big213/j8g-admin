@@ -1,6 +1,7 @@
 {
   "projects": {
-    "default": "giraffeql-boilerplate"
+    "default": "j8g-admin"
   },
-  "targets": {}
+  "targets": {},
+  "etags": {}
 }

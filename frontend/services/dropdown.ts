@@ -24,6 +24,13 @@ export const getUsers = generateMemoizedGetter('getUserPaginator', [
   '__typename',
 ])
 
+export const getTags = generateMemoizedGetter('getTagPaginator', [
+  'id',
+  'name',
+  'avatarUrl',
+  '__typename',
+])
+
 export const getUserRoles = memoize(async function (
   that,
   _forceReload = false

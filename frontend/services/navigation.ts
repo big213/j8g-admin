@@ -33,6 +33,15 @@ export function generateNavDrawerItems(that) {
           title: 'My Account',
           items: [
             generateNavRouteObject(that, {
+              recordInfo: myModels.MyArticle,
+              pageOptions: {
+                sort: {
+                  field: 'createdAt',
+                  desc: true,
+                },
+              },
+            }),
+            generateNavRouteObject(that, {
               recordInfo: myModels.MyApiKey,
               pageOptions: {
                 sort: {
