@@ -41,6 +41,11 @@ export const NavigationItem = <RecordInfo<'navigationItem'>>{
     ],
     headerOptions: [
       {
+        field: 'sortIndex',
+        width: '100px',
+        align: 'right',
+      },
+      {
         field: 'text',
         hideIfGrid: true,
       },
